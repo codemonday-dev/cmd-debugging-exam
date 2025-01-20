@@ -7,59 +7,36 @@
 ```
 function printNumbers():
     i = 1
+    j = 0
     while i <= 10:
         print(i)
+        j++
 ```
 
 **Challenge:** Fix the loop so it terminates correctly.
 
 ---
 
-## Exercise 2: Incorrect Output
-
-**Description:** The function is supposed to return the sum of all even numbers in a given list, but it returns an incorrect result.
-
-```
-function sumEvenNumbers(numbers):
-    sum = 0
-    for number in numbers:
-        if number % 2 == 1:
-            sum += number
-    return sum
-```
-**Challenge:** Identify and fix the logic error.
-
----
-
-## Exercise 3: Array Manipulation and Aggregation
+## Exercise 2: Understanding Function Composition, Loop Logic, and Conditional Execution
 
 **Description:**
-The function processes an array of objects representing sales transactions. Each transaction contains an id, product, quantity, and price. The goal is to calculate the total revenue for each product, but the implementation contains several bugs and inefficiencies.
+Find the final value of `ans` by tracing the code step-by-step,
 
+```js
+f = (x) => 2*x
+g = (y) => 3*y+1
+
+ans = 0
+result = 0
+n=2
+for(i=1; i<5; i++) {
+    result = ans * 2 || 2
+}
+while(n>0) {
+    ans = g(ans)
+    n = n - 2
+}
+if(f(2) < g(0)){
+    ans = g(0) + result
+}
 ```
-function calculateRevenue(transactions):
-    productRevenue = []
-    
-    for transaction in transactions:
-        if transaction.quantity > 0 or transaction.price > 0:  // Ignore invalid transactions
-            revenue = transaction.quantity * transaction.price
-            product = transaction.product
-            
-            // Check if product exists in productRevenue
-            for entry in productRevenue:
-                if entry.product == product:
-                    entry.revenue += revenue
-                else:
-                    productRevenue.append({ product: product, revenue: revenue })
-    
-    // Sort products by revenue in descending order
-    sortedRevenue = productRevenue.sort((a, b) => a.revenue - b.revenue)
-    
-    return sortedRevenue
-```
-
-**Challenge:**
-
- - Fix all logical errors.
- - Optimize the function to avoid duplicate entries in productRevenue.
- - Ensure proper error handling for edge cases.
