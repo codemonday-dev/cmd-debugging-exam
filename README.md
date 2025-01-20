@@ -1,6 +1,6 @@
 # Debugging skill exam
 
-## Exercise 1: Infinite Loop
+## Exercise 1: Infinite Loop (3 Minutes)
 
 **Description:** The following pseudo code is intended to print numbers from 1 to 10, but it runs indefinitely. Identify and fix the issue.
 
@@ -17,7 +17,7 @@ function printNumbers():
 
 ---
 
-## Exercise 2: Understanding Function Composition, Loop Logic, and Conditional Execution
+## Exercise 2: Understanding Function Composition, Loop Logic, and Conditional Execution (10 Minutes)
 
 **Description:**
 Find the final value of `ans` by tracing the code step-by-step,
