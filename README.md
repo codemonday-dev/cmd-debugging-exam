@@ -105,3 +105,4 @@ longTask()
 
 console.log("F")
 ```
+What is the output printed to console
