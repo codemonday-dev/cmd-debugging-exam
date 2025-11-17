@@ -75,3 +75,33 @@ execute()
 execute() // answer the result
 ```
 what is output result of second `execute()`
+
+
+## Exercise 4: Error Handling and Synchronous (3 Minutes)
+```js
+const f = () => {
+  throw new Error("X")
+}
+
+const apiCall = () = {
+  fetch(...).then(() => {
+    console.log("E")
+  })
+}
+
+console.log("A")
+
+try {
+  f()
+  console.log("B")
+} catch {
+  console.log("C")
+}
+
+console.log("D")
+
+apiCall()
+longTask()
+
+console.log("F")
+```
