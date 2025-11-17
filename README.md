@@ -72,6 +72,6 @@ then `main.js`
 ```js
 import { execute } from "./ex.js"
 execute()
-execute()
+execute() // answer the result
 ```
-what is output result
+what is output result of second `execute()`
