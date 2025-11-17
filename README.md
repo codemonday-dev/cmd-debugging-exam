@@ -136,17 +136,17 @@ let's assume that we have some dummy bank account service
 let balance = 0
 
 function deposit(x) {
-  return new Promise(r =>
-    setTimeout(() => { balance += x; r(balance) }, Math.random() * 10)
+  return new Promise(resolve =>
+    setTimeout(() => { balance += x; resolve(balance) }, Math.random() * 10)
   )
 }
 
 function withdraw(x) {
-  return new Promise(r => {
+  return new Promise((resolve,reject) => {
     if (balance >= x)
-      setTimeout(() => { balance -= x; r(true) }, Math.random() * 10)
+      setTimeout(() => { balance -= x; resolve(balance) }, Math.random() * 10)
     else
-      r(false)
+      reject(false)
   })
 }
 
