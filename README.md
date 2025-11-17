@@ -17,7 +17,7 @@ function printNumbers():
 
 ---
 
-## Exercise 2: Understanding Function Composition, Loop Logic, and Conditional Execution (10 Minutes)
+## Exercise 2: Understanding Function Composition, Loop Logic, and Conditional Execution (5 Minutes)
 
 **Description:**
 Find the final value of `ans` by tracing the code step-by-step,
@@ -40,3 +40,36 @@ if(f(2) < g(0)){
     ans = g(0) + result
 }
 ```
+
+## Exercise 3: Class (3 Minutes)
+```
+class A
+	constructor() : this.x = 0
+	increment() : this.x += 1
+a = new A()
+
+export a
+```
+and
+```
+class B
+	constructor() { this.x = 0 }
+	increment() { this.x += 1 }
+
+export new B()
+```
+then file x
+```
+import A
+import B
+function execute()
+	print A.increment()
+	print B.increment()
+```
+then main
+```
+import execute from X
+execute()
+execute()
+```
+what is result to the console
