@@ -153,7 +153,6 @@ const result = await Promise.all([
   withdraw(120),
 ])
 
-console.log("result:", result)
 console.log("balance:", balance)
 ```
 What is the output?
