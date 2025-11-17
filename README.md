@@ -60,11 +60,10 @@ export function makeA() {
 ```
 then file `ex.js`
 ```js
-import { a, b, A, makeA } from "./ab.js"
+import { a, makeA } from "./ab.js"
 
 export function execute() {
   const b = makeA()
-  console.log((new A()).increment())
   console.log(a.increment())
   console.log(b.increment())
 }
