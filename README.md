@@ -99,12 +99,8 @@ const g = () => {
        console.log("E")
        throw new Error("F")
     })  
-    .catch((err) => {
-       throw err 
-       console.log("G")
-     })  
     .finally(() => {
-      throw new Error("H")
+      throw new Error("G")
     })  
 }
 
@@ -118,12 +114,12 @@ try {
 console.log("D")
 try {
   g() 
-  throw new Error("I")
+  throw new Error("H")
 } catch {
-  console.log("J")
-  throw new Error("K")
+  console.log("I")
+  throw new Error("J")
 }
-console.log("L")
+console.log("K")
 ```
 What is the output printed to console
 
