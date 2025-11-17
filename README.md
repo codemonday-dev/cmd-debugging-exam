@@ -94,7 +94,7 @@ app.get('/service', async (req, res) => {
    return ...
 })
 ```
-Are there any problem if we install load balancer and scale this service to 4 instances
+Are there any problem if we install load balancer and scale this service from 1 to 4 instances
 
 ## Exercise 5: Error Handling and Synchronous (3 Minutes)
 ```js
