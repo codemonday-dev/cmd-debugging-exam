@@ -54,7 +54,6 @@ export class A {
 
 const newA = new A()
 export const a = newA
-export const b = new A()
 export function makeA() {
   return new A()
 }
@@ -64,11 +63,10 @@ then file `ex.js`
 import { a, b, A, makeA } from "./ab.js"
 
 export function execute() {
-  const c = makeA()
+  const b = makeA()
   console.log((new A()).increment())
   console.log(a.increment())
   console.log(b.increment())
-  console.log(c.increment())
 }
 ```
 then `main.js` 
