@@ -159,4 +159,4 @@ const result = await Promise.all([
 console.log("result:", result)
 console.log("balance:", balance)
 ```
-Can the user always deposit the cash
+Can the user always withdraw the cash
