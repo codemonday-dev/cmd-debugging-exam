@@ -80,7 +80,7 @@ what is output result of second `execute()`
 We are trying to scale this Express service
 ```js
 queue.consume(msg => {
-  process(msg)
+  sendSMS(msg)
 })
 
 cron(* 12 * * *) {
