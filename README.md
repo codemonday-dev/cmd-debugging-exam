@@ -69,7 +69,7 @@ export function execute() {
 }
 ```
 then `main.js` 
-```
+```js
 import { execute } from "./ex.js"
 execute()
 execute()
