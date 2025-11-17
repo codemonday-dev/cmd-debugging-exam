@@ -52,7 +52,7 @@ export class A {
 const newA = new A()
 export const a = newA
 export const b = new A()
-export function makeA() {          // factory
+export function makeA() {
   return new A()
 }
 ```
