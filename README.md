@@ -42,34 +42,36 @@ if(f(2) < g(0)){
 ```
 
 ## Exercise 3: Class (3 Minutes)
-```
-class A
-	constructor() : this.x = 0
-	increment() : this.x += 1
-a = new A()
+Consider the file `ab.js`
+```js
+export class A { 
+  constructor() { this.x = 0 }
+  increment() { return ++this.x }
+}
 
-export a
+const newA = new A()
+export const a = newA
+export const b = new A()
+export function makeA() {          // factory
+  return new A()
+}
 ```
-and
-```
-class B
-	constructor() { this.x = 0 }
-	increment() { this.x += 1 }
+then file `ex.js`
+```js
+import { a, b, A, makeA } from "./ab.js"
 
-export new B()
+export function execute() {
+  const c = makeA()
+  console.log((new A()).increment())
+  console.log(a.increment())
+  console.log(b.increment())
+  console.log(c.increment())
+}
 ```
-then file x
+then `main.js` 
 ```
-import A
-import B
-function execute()
-	print A.increment()
-	print B.increment()
-```
-then main
-```
-import execute from X
+import { execute } from "./ex.js"
 execute()
 execute()
 ```
-what is result to the console
+what is output result
