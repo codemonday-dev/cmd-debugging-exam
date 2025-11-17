@@ -143,7 +143,7 @@ function deposit(x) {
 
 function withdraw(x) {
   return new Promise(resolve =>
-      setTimeout(() => { balance -= x; resolve(balance) }, Math.random() * 10)
+      setTimeout(() => { if(x >= balance) balance -= x; resolve(balance) }, Math.random() * 10)
   )
 }
 
