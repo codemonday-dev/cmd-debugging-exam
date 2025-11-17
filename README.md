@@ -58,21 +58,18 @@ export function makeA() {
   return new A()
 }
 ```
-then file `ex.js`
+then file `main.js`
 ```js
 import { a, makeA } from "./ab.js"
 
-export function execute() {
+function execute() {
   const b = makeA()
   console.log(a.increment())
   console.log(b.increment())
 }
-```
-then `main.js` 
-```js
-import { execute } from "./ex.js"
+
 execute()
-execute() // answer the result
+execute()
 ```
 what is output result of second `execute()`
 
