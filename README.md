@@ -98,31 +98,43 @@ Are there any problem if we install load balancer and scale this service to 4 in
 
 ## Exercise 5: Error Handling and Synchronous (3 Minutes)
 ```js
-const f = () => {
-  throw new Error("X")
-}
-
-const apiCall = () = {
-  fetch(...).then(() => {
-    console.log("E")
-  })
+const f = () => { throw new Error("X") }
+const g = () => {
+  Promise.resolve()
+    .then(() => { 
+       console.log("E")
+       throw new Error("F")
+    })  
+    .catch((err) => {
+       throw err 
+       console.log("G")
+     })  
+    .catch((err) => {
+       console.log("H")
+       throw new Error("I")
+       throw new Error("J")
+    })  
+    .finally(() => {
+      throw new Error("K")
+    })  
 }
 
 console.log("A")
-
 try {
-  f()
+  f() 
   console.log("B")
 } catch {
   console.log("C")
 }
-
 console.log("D")
-
-apiCall()
-longTask()
-
-console.log("F")
+try {
+  g() 
+  throw new Error("L")
+} catch {
+  console.log("M")
+  throw new Error("N")
+}
+console.log("O")
 ```
 What is the output printed to console
 
