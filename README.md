@@ -159,4 +159,4 @@ const result = await Promise.all([
 console.log("result:", result)
 console.log("balance:", balance)
 ```
-what is the outcome out the program
+Can the user always deposit the cash
