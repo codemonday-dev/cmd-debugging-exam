@@ -125,3 +125,34 @@ longTask()
 console.log("F")
 ```
 What is the output printed to console
+
+## Exercise 6:
+let's assume that we have some dummy bank account service
+```js
+let balance = 100
+
+function deposit(x) {
+  return new Promise(r =>
+    setTimeout(() => { balance += x; r(balance) }, Math.random() * 10)
+  )
+}
+
+function withdraw(x) {
+  return new Promise(r => {
+    if (balance >= x)
+      setTimeout(() => { balance -= x; r(true) }, Math.random() * 10)
+    else
+      r(false)
+  })
+}
+
+const result = await Promise.all([
+  deposit(50),
+  withdraw(120),
+  deposit(30),
+])
+
+console.log("result:", result)
+console.log("balance:", balance)
+```
+what is the outcome out the program
