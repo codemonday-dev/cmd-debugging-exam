@@ -79,8 +79,24 @@ execute() // answer the result
 ```
 what is output result of second `execute()`
 
+## Exercise 4: Scaling our service (3 Minutes)
+We are trying to scale this Express service
+```js
+queue.consume(msg => {
+  process(msg)
+})
 
-## Exercise 4: Error Handling and Synchronous (3 Minutes)
+cron(* 12 * * *) {
+  sendEmail()
+}
+
+app.get('/service', async (req, res) => {
+   return ...
+})
+```
+Are there any problem if we install load balancer and scale this service to 4 instances
+
+## Exercise 5: Error Handling and Synchronous (3 Minutes)
 ```js
 const f = () => {
   throw new Error("X")
