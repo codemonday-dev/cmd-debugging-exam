@@ -144,7 +144,7 @@ function deposit(x) {
 function withdraw(x) {
   return new Promise(resolve =>
       setTimeout(() => { balance -= x; resolve(balance) }, Math.random() * 10)
-  })
+  )
 }
 
 const result = await Promise.all([
