@@ -133,7 +133,7 @@ What is the output printed to console
 ## Exercise 6:
 let's assume that we have some dummy bank account service
 ```js
-let balance = 100
+let balance = 0
 
 function deposit(x) {
   return new Promise(r =>
@@ -151,12 +151,12 @@ function withdraw(x) {
 }
 
 const result = await Promise.all([
-  deposit(50),
+  deposit(100),
+  deposit(20),
   withdraw(120),
-  deposit(30),
 ])
 
 console.log("result:", result)
 console.log("balance:", balance)
 ```
-Can the user always withdraw the cash
+Can the user always withdraw the cash?
