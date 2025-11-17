@@ -4,13 +4,17 @@
 
 **Description:** The following pseudo code is intended to print numbers from 1 to 10, but it runs indefinitely. Identify and fix the issue.
 
-```
-function printNumbers():
-    i = 1
-    j = 0
-    while i <= 10:
-        print(i)
-        j++
+```js
+function printNumbers() {
+  let i = 1
+  let j = 0
+
+  while (i <= 10) {
+    console.log(i)
+    j++
+    i++
+  }
+}
 ```
 
 **Challenge:** Fix the loop so it terminates correctly.
